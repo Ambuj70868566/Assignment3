@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VaultofCodes - Certificate Verifier</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Background Elements -->
+    <div class="bg-decoration">
+      <div class="bg-circle bg-circle-1"></div>
+      <div class="bg-circle bg-circle-2"></div>
+      <div class="bg-circle bg-circle-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="brand">
+          <div class="brand-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="url(#gradient1)" />
+              <path
+                d="M8 12L16 8L24 12V20C24 22.2091 22.2091 24 20 24H12C9.79086 24 8 22.2091 8 20V12Z"
+                stroke="white"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M12 16L15 19L20 14"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <defs>
+                <linearGradient id="gradient1" x1="0" y1="0" x2="32" y2="32">
+                  <stop stop-color="#667eea" />
+                  <stop offset="1" stop-color="#764ba2" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h1 class="brand-title">VaultofCodes</h1>
+        </div>
+        <div class="header-subtitle">Certificate Verification System</div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="hero-section">
+        <h2 class="hero-title">Verify Your Certificate</h2>
+        <p class="hero-subtitle">
+          Enter your email address or student ID to verify your certificate
+          authenticity
+        </p>
+      </div>
+
+      <!-- Search Form -->
+      <div class="search-container">
+        <div class="search-form">
+          <div class="input-group">
+            <div class="input-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <input
+              id="identifier"
+              type="text"
+              placeholder="Enter your Email or Student ID"
+              class="search-input"
+            />
+          </div>
+          <button onclick="verifyStudent()" class="verify-btn">
+            <span class="btn-text">Verify Certificate</span>
+            <div class="btn-loader hidden">
+              <div class="loader-spinner"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="result" class="result-container"></div>
+
+      <!-- Loading Spinner -->
+      <div class="spinner-container hidden">
+        <div class="modern-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <p class="loading-text">Verifying certificate...</p>
+      </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
